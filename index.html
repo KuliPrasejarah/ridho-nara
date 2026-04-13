@@ -4,79 +4,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Hitung Mundur Sebelum Berlayar ⚓</title>
-  <style>
-    body {
-      font-family: 'Segoe UI', sans-serif;
-      background-color: #ffffff;
-      color: #333;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      min-height: 100vh;
-      margin: 0;
-      padding: 20px 10px;
-      box-sizing: border-box;
-      overflow-y: auto;
-    }
-    #countdown {
-      font-size: 1.3rem;
-      background-color: #f0f0f0;
-      color: #222;
-      padding: 15px 25px;
-      border-radius: 12px;
-      border: 1px solid #ddd;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-      text-align: center;
-    }
-    .caption {
-      margin-top: 10px;
-      font-size: 1rem;
-    }
-  </style>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <div id="countdown">Loading...</div>
-  <div class="caption">Nahkoda: Ridho ⚓ | Navigator: Nara 🧭 | Penumpang Istimewa : WIP</div>
+  <div class="caption">
+    Nahkoda: Ridho ⚓ | Navigator: Nara 🧭 | Penumpang Istimewa: WIP
+  </div>
 
-  <script>
-    const countdown = document.getElementById("countdown");
-    const targetDate = new Date("2025-06-22T10:00:00+07:00").getTime();
-
-    function updateCountdown() {
-      const now = new Date().getTime();
-      const distance = targetDate - now;
-
-      let displayText = '';
-      let titleText = ''; // Variabel untuk judul dinamis di tab browser
-
-      if (distance < 0) {
-        // Timer sudah lewat dari waktu yang ditentukan, hitung mundur dengan penambahan waktu
-        const elapsed = Math.abs(distance); // waktu yang sudah lewat
-        const days = Math.floor(elapsed / (1000 * 60 * 60 * 24));
-        const hours = Math.floor((elapsed % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        const minutes = Math.floor((elapsed % (1000 * 60 * 60)) / (1000 * 60));
-        const seconds = Math.floor((elapsed % (1000 * 60)) / 1000);
-
-        displayText = `🚢💕 Kapal sedang berlayar </br>selama ${days} hari ${hours} jam ${minutes} menit ${seconds} detik!`;
-        titleText = `Kapal sudah berlayar!🚢🥰`; // Update judul tab
-      } else {
-        // Timer sedang berjalan, tampilkan waktu yang masih tersisa
-        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-        displayText = `Hitung mundur menuju pelayaran! 🚢💍<br>${days} hari ${hours} jam ${minutes} menit ${seconds} detik`;
-        titleText = `Kapal menunggu pelayaran 🚢`; // Update judul tab
-      }
-
-      countdown.innerHTML = displayText;
-      document.title = titleText; // Update judul tab sesuai status
-    }
-
-    updateCountdown();
-    setInterval(updateCountdown, 1000);
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>
