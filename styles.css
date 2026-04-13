@@ -1,0 +1,30 @@
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #ffffff;
+  color: #333;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  margin: 0;
+  padding: 20px 10px;
+  box-sizing: border-box;
+  overflow-y: auto;
+}
+
+#countdown {
+  font-size: 1.3rem;
+  background-color: #f0f0f0;
+  color: #222;
+  padding: 15px 25px;
+  border-radius: 12px;
+  border: 1px solid #ddd;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  text-align: center;
+}
+
+.caption {
+  margin-top: 10px;
+  font-size: 1rem;
+}
